@@ -51,7 +51,57 @@ class FactoryB:public CoreFactory
     MultiCore* CreateMultiCore(){return new MultiCoreB();}
 };
 
+class Phone
+{
+    public:
+    Phone(){}
+    virtual ~Phone(){}
+    virtual void showDecorate(){}
+};
+class iPhone :public Phone
+{
+    private:
+    string m_name;
+    public:
+    iPhone(string name):m_name(name){}
+    ~iPhone(){}
+    void ShowDecorate(){cout<<m_name<<"的装饰"<<endl;}
+};
 
+class NokiaPhone:public Phone
+{
+    private:
+    string m_name;
+    public:
+    NokiaPhone(string name):m_name(name){}
+    ~NokiaPhone(){}
+    void ShowDecorate(){cout<<m_name<<"的装饰"<<endl;}
+    
+}；
+class DecoratePhone:public Phone
+{
+    private:
+    Phone *m_phone;
+    public:
+    DecoratePhone(Phone *phone):m_phone(phone){}
+    virtual void ShowDecorate(){m_phone->ShowDecorate();}
+};
+class DecoratePhoneA :public DecoratePhone
+{
+    public:
+    DecoratePhoneA(Phone *phone):DecoratePhone(phone){}
+    void ShowDecorate(){DecoratePhone::ShowDecorate();AddDecorate();}
+    private:
+    void AddDecorate(){cout<<"增加挂件"<<endl;}
+};
+class DecoratePhoneB:public DecoratePhone
+{
+    public:
+    DecoratePhone(Phone *phone):DecoratePhone(phone){}
+    void ShowDecorate(){DecoratePhone::ShowDecorate();AddDecorate();}
+    private:
+    void AddDecorate(){cout<<"屏幕贴膜"<<endl;}
+}
 
 
 

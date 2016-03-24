@@ -21,4 +21,5 @@ public:
 		return m_pInstance;
 	}
 };
-http://blog.csdn.net/hackbuteer1/article/details/7460019	   
+http://blog.csdn.net/hackbuteer1/article/details/7460019
+http://blog.csdn.net/woshinia/article/category/864221/2	   

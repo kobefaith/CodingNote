@@ -17,22 +17,26 @@ github地址：https://github.com/kobefaith
 熟练掌握 c/c++ 熟悉 python/javascript/html/css 。
 熟悉算法及数据结构，熟悉常用设计模式。
 系统：
-熟悉Linux系统，及linux系统下的程序开发
+熟悉Linux系统，及linux系统下的进程间通信及网络编程等，熟悉linux平台的数字电视框架linuxDVB。
+熟悉Tizen系统下多媒体框架 openmax、alsa驱动框架等。
+熟悉Tizen系统下的数字电视播放流程及多媒体文件播放流程。
 工具及框架：
 熟练使用github\SVN等版本管理工具
-熟悉Jquery基本操作，熟悉 Backbone框架，熟悉python Flask框架
+熟悉Jquery基本操作，熟悉 Backbone框架，熟悉python Flask框架。
 熟悉MySQL数据库。
-熟悉第三方登录协议oauth
-熟悉Restful API设计
-了解Bootstrap
-了解Node.js框架
+熟悉第三方登录协议oauth。
+熟悉REST API设计。
+了解Bootstrap。
+了解Node.js框架。
 =======================================================
 工作经历及项目经验
 2013年5月至今在三星电子中国研发中心工作。
-2013年至2014年
-2014年至2015年
-2015年至今 开发基于Backbone框架的智能音箱应用Monet app。
-使用的相关框架 Backbone.js \stat.js\require.js\Jquery等
+2013年至2014年负责数字电视Tizen平台的frontend,demux驱动的维护和debug工作。
+2014年至2015年负责数字电视Tizen平台的多媒体框架openmax的维护和debug工作，以及alsa驱动的维护和debug工作。
+2015年初至2015年底负责开发基于Backbone框架的智能音箱应用Monet app。
+使用的相关框架 Backbone.js \stat.js\require.js\Jquery等。
+部分前端页面效果demo :https://github.com/kobefaith/Javascript/tree/master/Project/Rotate_3D
+2016年初至今：负责蓝光播放器底层Bd_hal的开发。
 个人项目介绍：
 以开源框架flasky为基础，搭建了一个基于Flask框架的微博系统。
 增加了以oauth协议为基础的第三方登录功能。

@@ -1,0 +1,181 @@
+koala 编译less sass的工具
+<link rel="stylesheet/less" type="text/css" href="styles.less" />
+<script src="less.js" type="text/javascript"></script>
+前端使用less的一种方式，还可以用lessc 把 文件编译成css直接引入。lessc styles.less > styles.css
+嵌套
+#header {
+  color: black;
+}
+#header .navigation {
+  font-size: 12px;
+}
+#header .logo {
+  width: 300px;
+}
+可以写成如下样式
+#header {
+  color: black;
+  .navigation {
+    font-size: 12px;
+  }
+  .logo {
+    width: 300px;
+  }
+}
+运算
+@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+
+color: #888 / 4;
+background-color: @base-color + #111;
+height: 100% / 2 + @filler;
+导入less文件
+@import "library"; // library.less
+@import "typo.css";
+变量
+@link-color:        #428bca; // sea blue
+@link-color-hover:  darken(@link-color, 10%);
+
+// 用法
+a,
+.link {
+  color: @link-color;
+}
+a:hover {
+  color: @link-color-hover;
+}
+.widget {
+  color: #fff;
+  background: @link-color;
+}
+变量可以是属性
+@property: color;
+
+.widget {
+  @{property}: #0ee;
+  background-@{property}: #999;
+}
+.widget {
+  color: #0ee;
+  background-color: #999;
+}
+继承
+nav ul {
+  &:extend(.inline);
+  background: blue;
+}
+.inline {
+  color: red;
+}
+nav ul {
+  background: blue;
+}
+.inline,
+nav ul {
+  color: red;
+}
+.a:extend(.b) {}
+
+// the above block does the same thing as the below block
+.a {
+  &:extend(.b);
+}
+同时继承多个
+.e:extend(.f) {}
+.e:extend(.g) {}
+
+// the above an the below do the same thing
+.e:extend(.f, .g) {}
+
+MixIn
+.a, #b {
+  color: red;
+}
+.mixin-class {
+  .a();
+}
+.mixin-id {
+  #b();
+}
+
+.a, #b {
+  color: red;
+}
+.mixin-class {
+  color: red;
+}
+.mixin-id {
+  color: red;
+}
+带参数
+.border_02(@border_width){
+  border:solid yellow @border_width;
+	
+}
+.test{
+	.border_02(30px);
+}
+
+.border_02(@border_width:10px){ //带默认值
+  border:solid yellow @border_width;
+	
+}
+运算
+@test_01:300px;
+.box_02{
+	width:@test_01 + 20px;
+}
+.box_03{
+	width:@test_01 + 20*4;
+	color:#ccc -20;
+}
+嵌套
+.list{
+	width:600px;
+	margin:30px auto;
+	padding:0;
+	list-style:none;
+	li{
+	   height:30px;
+	   line-height:30px;
+	   background-colorpink;
+	}
+	a{
+	   float:left;
+	   &:hover{ //&代表上一层选择器
+	      color:red
+	   }
+	}
+}
+.border_arg(@w:30px,@c:red,@xx:solid){
+	border:@arguments;//这样就相当于把所有的参数都写上
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

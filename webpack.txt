@@ -1,0 +1,61 @@
+webpack的entry有三种形式，一种是一个字符串，另外两种是数组和对象。
+对象形式的 通过[name]来区别输出的文件
+entry: ["./entry1", "./entry2"]
+{
+    entry: {
+        page1: "./page1",
+        page2: ["./entry1", "./entry2"]
+    },
+    output: {
+        // Make sure to use [name] or [id] in output.filename
+        //  when using multiple entry points
+        filename: "[name].bundle.js",
+        chunkFilename: "[id].bundle.js"
+    }
+}
+插件. 此处制定输出的html的模版，htmlWebpackPlugin插件会自动把生成的js文件挂载到html文件中，
+var htmlWebpackPlugin = require('html-webpack-plugin');
+ plugins: [
+        new htmlWebpackPlugin({
+           filename :'index-[hash].html',
+           template:'index.html',
+           inject:'head'//制定把js文件插入到html的头部
+           minify:{ //指定html做处理，删除注释等
+              removeComments:true,
+              collapseWhitespace:true
+           }
+        })
+ ]
+ output:{
+   path:'./dist',
+   filename:'js/[name].js',
+   publicPath:'http://cdn.com/' //这里是指定上线地址，打包后的js文件的默认路径都是这个开头
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
